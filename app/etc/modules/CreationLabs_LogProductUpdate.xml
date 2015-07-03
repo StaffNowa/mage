@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <CreationLabs_LogProductUpdate>
+            <active>true</active>
+            <codePool>local</codePool>
+        </CreationLabs_LogProductUpdate>
+    </modules>
+
+    <global>
+        <models>
+            <creationlabs_logproductupdate>
+                <class>CreationLabs_LogProductUpdate_Model</class>
+            </creationlabs_logproductupdate>
+        </models>
+        <events>
+            <catalog_product_save_after>
+                <observers>
+                    <creationlabs_logproductupdate>
+                        <class>creationlabs_logproductupdate/observer</class>
+                        <method>logupdate</method>
+                        <type>singleton</type>
+                    </creationlabs_logproductupdate>
+                </observers>
+            </catalog_product_save_after>
+        </events>
+    </global>
+</config>

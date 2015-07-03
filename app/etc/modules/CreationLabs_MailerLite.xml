@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <CreationLabs_MailerLite>
+            <active>true</active>
+            <codePool>local</codePool>
+        </CreationLabs_MailerLite>
+    </modules>
+
+    <global>
+        <models>
+            <creationlabs_mailerlite>
+                <class>CreationLabs_MailerLite_Model</class>
+            </creationlabs_mailerlite>
+        </models>
+        <events>
+            <newsletter_subscriber_save_before>
+                <observers>
+                    <creationlabs_mailerlite>
+                        <class>creationlabs_mailerlite/observer</class>
+                        <method>newsletterSubscriberChange</method>
+                    </creationlabs_mailerlite>
+                </observers>
+            </newsletter_subscriber_save_before>
+        </events>
+    </global>
+</config>
